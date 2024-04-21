@@ -19,6 +19,93 @@ namespace Prog122_S24_L3
         public MainWindow()
         {
             InitializeComponent();
+            
+        } // MainWindow
+
+        private void btnDisplayInformation_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // Steps
+                // 1. Create strings variables for our first and last name
+                string FirstName = txtFirstName.Text;
+                string LastName = txtLastName.Text;
+
+                // Testing to see if 
+                // int number = int.Parse(firstName) / int.Parse(lastName);
+                // 2. Concatenate them together to form a full name 
+                // string interpolation
+                string FullName = $"{FirstName} {LastName}";
+
+                // Rich Text Box
+
+
+                // 3. Display that information to our label 
+                lblDisplayFullName.Content = FullName;
+                
+                // 4. Display to the Rich Text Box
+                runDisplay.Text = FullName;
+
+                // x - Add a new Rich Text Box for getting an Address
+                // x - Add a label for the Rich Text Box
+                // x - Properly name the "Run" tag 
+                // Write the code to grab the text from RTB
+                string address = runHomeInfo.Text;
+                // Display it to our original runDisplay 
+
+                // Two line breaks
+                runDisplay1.Text += "\n\n";
+
+                // Append the Address 
+                runDisplay.Text += address;
+
+                //Full Name
+                //
+                // Address
+
+
+
+            }
+            catch (FormatException fex)
+            {
+                MessageBox.Show(fex.ToString());
+            }
+            catch (DivideByZeroException dvz)
+            {
+                MessageBox.Show("You cannot divide by zero");
+            }
+            // DivideByZero is for the homework
+
+
+
+
+
+            // Steps
+            // 1. Create strings variables for our first and last name
+            string firstName = txtFirstName.Text;
+            string lastName = txtLastName.Text;
+            // 2. Concatenate them together to form a full name 
+            // string interpolation
+            string fullName = $"{firstName} {lastName}";
+            // 3. Display that information to our label 
+            lblDisplayFullName.Content = fullName;
         }
-    }
-}
+
+
+        // This is a demonstration of a summary comment below
+
+        /// <summary>
+        /// Test Method to demonstrate what summary is 
+        /// </summary>
+        /// <param name="number1"></param>
+        /// <param name="word1"></param>
+        /// <returns>Returning the formatting word</returns>
+        // This method is used to return a 
+        public string TestMethod(int number1, string word1)
+        {
+            return "";
+        }
+
+
+    } // class
+} // namespace
